@@ -21,7 +21,7 @@ public class Background {
     private BGpicture[] backpictures;
 
     public Background() {
-        speed = 4;
+        speed = 1;
         backpictures = new BGpicture[2];
         backpictures[0] = new BGpicture(new Vector2(0, 0));
         backpictures[1] = new BGpicture(new Vector2(800, 0));

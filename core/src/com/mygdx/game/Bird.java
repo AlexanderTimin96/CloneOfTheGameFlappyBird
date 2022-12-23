@@ -7,20 +7,20 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 
 public class Bird {
-    private Texture birdPicture;
-    private Vector2 positionBird;
-    private float vy;
-    private float gravity;
+    public Texture birdPicture;
+    public Vector2 position;
+    public float vy;
+    public float gravity;
 
     public Bird() {
         this.birdPicture = new Texture("bird1.png");
-        this.positionBird = new Vector2(100, 400);
+        this.position = new Vector2(100, 400);
         vy = 0;
         gravity = -0.3f;
     }
 
     public void render(SpriteBatch batch) {
-        batch.draw(birdPicture, positionBird.x, positionBird.y);
+        batch.draw(birdPicture, position.x, position.y);
     }
 
     public void update() {
@@ -28,6 +28,11 @@ public class Bird {
             vy = 5f;
         }
         vy += gravity;
-        positionBird.y += vy;
+        position.y += vy;
+    }
+
+    public void recreate() {
+        this.position = new Vector2(100, 400);
+        vy = 0;
     }
 }
